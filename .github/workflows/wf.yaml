@@ -20,5 +20,5 @@ jobs:
         uses: actions/checkout@v4
       - name: details
         run: |
-          echo "the name of event is: ${{github.event}}"   
+          echo "the name of event is: ${{github.event_name}}"   
           git log
