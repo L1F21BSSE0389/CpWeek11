@@ -1,0 +1,24 @@
+name: first workflow
+
+
+on:
+  push:
+    branches:
+      - develop
+  pull_request:
+    branches:
+      - develop
+
+jobs:
+  build-job:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: welcome message
+        run: echo "welcome to the github"
+      - name: copy repository
+        uses: actions/checkout@v4
+      - name: details
+        run: |
+          echo "the name of event is: ${{github.event}}"   
+          git log
